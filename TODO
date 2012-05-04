@@ -1,0 +1,6 @@
+1. Use `SourceManager::getFileOffset` to pull out each `FunctionDecl`'s file offset for easier indexing (instead of line/col).
+2. Change `FunctionDecl` file info to add in the filename (so we can avoid functions defined in `#include`d, non-system header files).
+3. Figure out how to keep all relevant `#include`s and `typedefs`
+3. Have `PrintFunctionInfo` print out info about all relevant `NamedDecls` (need to decide which ones are "relevant").
+4. Figure out if Python needs to read whole file in at once with `.read()` or if there's a better way to mmap the file.
+5. Create a Python library to facilitate pulling out `NamedDecl`s for manipulation as needed.
